@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Paragraph</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="paragraph">
+      "Этот абзац будет скрываться и показываться при нажатии кнопок".
+    </p>
+    <button id="button1">Кнопка 1</button>
+    <button id="button2">Кнопка 2</button>
+
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      const button1 = document.getElementById("button1");
+      const button2 = document.getElementById("button2");
+
+      let button1Clicked = false;
+
+      button1.addEventListener("click", function () {
+        button1Clicked = true;
+      });
+
+      button2.addEventListener("click", function () {
+        if (button1Clicked) {
+          paragraph.classList.toggle("hidden");
+          button1Clicked = false;
+        }
+      });
+    </script>
+  </body>
+</html>
